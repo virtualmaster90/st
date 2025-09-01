@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-llm-auth-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "prisma": "prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "@next-auth/prisma-adapter": "^1.1.0",
+    "bcrypt": "^5.1.0",
+    "ioredis": "^5.3.2",
+    "next": "14.0.0",
+    "next-auth": "^4.22.1",
+    "openai": "^4.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}
