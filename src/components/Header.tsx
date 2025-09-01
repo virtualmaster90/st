@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import { Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from '@clerk/nextjs';
 
 export function Header() {
   return (
@@ -16,11 +23,24 @@ export function Header() {
           <Leaf className="h-6 w-6 text-primary" />
           <span className="font-headline">AgriCheck</span>
         </Link>
-        <nav>
-          <Button asChild variant="outline">
-            <Link href="/claim">Submit Claim</Link>
-          </Button>
-        </nav>
+        <div className="flex items-center gap-4">
+          <SignedIn>
+            <Button asChild variant="outline">
+              <Link href="/claim">Submit Claim</Link>
+            </Button>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <div className="flex items-center gap-2">
+              <Button asChild variant="ghost">
+                <SignInButton />
+              </Button>
+              <Button asChild>
+                <SignUpButton />
+              </Button>
+            </div>
+          </SignedOut>
+        </div>
       </div>
     </header>
   );
